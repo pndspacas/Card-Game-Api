@@ -58,8 +58,12 @@ function drawTwo() {
             document.querySelector("h6").innerText = "GAME WINNER IS PLAYER 2";
           }
         }
-      } else {
+      } else if (player1Val === player2Val){
         document.querySelector("h4").innerText = "Draw";
+        if (data.remaining === 0) {
+          if (countWinsP1 === countWinsP2) {
+            document.querySelector("h6").innerText = "GAME DRAW";
+          }
       }
     })
     .catch((err) => {
@@ -111,16 +115,4 @@ function resetP2() {
   document.querySelector("h5").innerText = "Remaining Cards: 52";
   document.querySelector("h4").innerText = "";
   document.querySelector("h6").innerText = "";
-}
-
-function total() {
-  if (data.remaining === 0) {
-    if (countWinsP1 > countWinsP2) {
-      document.querySelector("h6").innerText = "GAME WINNER PLAYER 1";
-    } else if (countWinsP1 < countWinsP2) {
-      document.querySelector("h6").innerText = "GAME WINNER PLAYER 2";
-    } else {
-      document.querySelector("h6").innerText = "GAME DRAW";
-    }
-  }
 }
