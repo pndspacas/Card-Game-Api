@@ -53,18 +53,8 @@ function drawTwo() {
       } else if (player1Val < player2Val) {
         document.querySelector("h4").innerText = "Player 2 Wins";
         countWinsP2();
-        if (data.remaining === 0) {
-          if (countWinsP1 < countWinsP2) {
-            document.querySelector("h6").innerText = "GAME WINNER IS PLAYER 2";
-          }
-        }
       } else if (player1Val === player2Val){
         document.querySelector("h4").innerText = "Draw";
-        if (data.remaining === 0) {
-          if (countWinsP1 === countWinsP2) {
-            document.querySelector("h6").innerText = "GAME DRAW";
-          }
-      }
     })
     .catch((err) => {
       console.log(`error ${err}`);
